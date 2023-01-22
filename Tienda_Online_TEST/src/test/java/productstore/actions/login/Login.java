@@ -24,6 +24,6 @@ public class Login extends UIInteractionSteps{
 
         //Realizar espera de 5s - botón de confirmación de SigUp
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("//*[@id='logInModal']/div/div/div[3]/button[2]")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("nameofuser")));
     }
 }

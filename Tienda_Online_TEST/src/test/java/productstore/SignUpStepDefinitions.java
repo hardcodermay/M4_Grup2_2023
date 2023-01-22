@@ -1,5 +1,6 @@
 package productstore;
 
+import JavaCode.HexExtension;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,6 +12,16 @@ import productstore.actions.signup.SignUpActionResults;
 import static org.assertj.core.api.Assertions.assertThat;
 public class SignUpStepDefinitions {
 
+    private static String USERNAME;
+
+    private void getUserName() {
+        HexExtension un = new HexExtension();
+        USERNAME = un.userGenerator();
+    }
+
+    public SignUpStepDefinitions() {
+        getUserName();
+    }
     @Steps
     Navigator navigate;
 
@@ -21,17 +32,17 @@ public class SignUpStepDefinitions {
     SignUpActionResults signedUserResults;
 
     @Given("Francisco wants to sign up at the website using username and password")
-    public void franciscoWantsToSignUpAtTheWebsiteUsingUsernameAndPassword() {
+    public void sign_franciscoWantsToSignUpAtTheWebsiteUsingUsernameAndPassword() {
         navigate.toLandingPage();
     }
 
-    @When("he uses {string} as the username and {string} as password")
-    public void heUsesM_grupoAsTheUsernameAndDevopsmGAsPassword(String username, String password) {
-        register.SignUpUser(username, password);
+    @When("to sign up he uses {string} as the username and {string} as password")
+    public void sign_heUsesM_grupoAsTheUsernameAndDevopsmGAsPassword(String username, String password) {
+        register.SignUpUser(USERNAME, password);
     }
 
-    @Then("he should see {string} on the SigUp Results Page")
-    public void heShouldSeeWelcomeM_grupoOnTheSigUpResultsPage(String result) {
-        assertThat(signedUserResults.getSignUpResults(result)).isEqualTo(result);
+    @Then("he should see {string} on the SigUp Results Page once Signed")
+    public void sign_heShouldSeeWelcomeM_grupoOnTheSigUpResultsPage(String result) {
+        assertThat(signedUserResults.getSignUpResults("Welcome "+USERNAME)).isEqualTo("Welcome "+USERNAME);
     }
 }

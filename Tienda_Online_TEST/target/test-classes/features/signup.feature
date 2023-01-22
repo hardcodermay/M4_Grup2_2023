@@ -7,5 +7,5 @@ Feature: SignUp
   Scenario: User Sign Up at Product Store website
 
     Given Francisco wants to sign up at the website using username and password
-    When he uses 'm4_grupo2' as the username and 'devopsm4g2' as password
-    Then he should see 'Welcome m4_grupo2' on the SigUp Results Page
+    When to sign up he uses 'm4_grupo2' as the username and 'devopsm4g2' as password
+    Then he should see 'Welcome m4_grupo2' on the SigUp Results Page once Signed

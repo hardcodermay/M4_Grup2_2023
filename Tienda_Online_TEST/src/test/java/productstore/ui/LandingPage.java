@@ -19,4 +19,7 @@ public class LandingPage extends PageObject {
     public static final By LOGIN_PASSWORD_FIELD = By.id("loginpassword");
     public static final By LOGIN_CONFIRMATION_BUTTON = By.xpath("//*[@id='logInModal']/div/div/div[3]/button[2]");
 
+    //User Controls
+    public static final By USER_NAME_LABEL = By.id("nameofuser");
+
 }

@@ -13,6 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class SignUpStepDefinitions {
 
     private static String USERNAME;
+    private static final String SIGN_UP_CONFIRMATION_TEXT = "Sign up successful.";
 
     private void getUserName() {
         HexExtension un = new HexExtension();
@@ -36,13 +37,13 @@ public class SignUpStepDefinitions {
         navigate.toLandingPage();
     }
 
-    @When("to sign up he uses {string} as the username and {string} as password")
+    @When("to sign up he uses {string} and {string} as password")
     public void sign_heUsesM_grupoAsTheUsernameAndDevopsmGAsPassword(String username, String password) {
         register.SignUpUser(USERNAME, password);
     }
 
     @Then("he should see {string} on the SigUp Results Page once Signed")
     public void sign_heShouldSeeWelcomeM_grupoOnTheSigUpResultsPage(String result) {
-        assertThat(signedUserResults.getSignUpResults("Welcome "+USERNAME)).isEqualTo("Welcome "+USERNAME);
+        assertThat(signedUserResults.getSignUpResults(result)).isEqualTo(SIGN_UP_CONFIRMATION_TEXT);
     }
 }

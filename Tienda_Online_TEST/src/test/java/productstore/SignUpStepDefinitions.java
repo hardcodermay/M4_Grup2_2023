@@ -6,7 +6,10 @@ import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
 import productstore.actions.navigate.Navigator;
 import productstore.actions.signup.SignUp;
+import productstore.actions.signup.SignUpActionResults;
 
+
+import static org.assertj.core.api.Assertions.assertThat;
 public class SignUpStepDefinitions {
 
     @Steps
@@ -14,6 +17,9 @@ public class SignUpStepDefinitions {
 
     @Steps
     SignUp register;
+
+    @Steps
+    SignUpActionResults signedUserResults;
 
     @Given("Francisco wants to sign up at the website using username and password")
     public void franciscoWantsToSignUpAtTheWebsiteUsingUsernameAndPassword() {
@@ -27,5 +33,6 @@ public class SignUpStepDefinitions {
 
     @Then("he should see {string} on the SigUp Results Page")
     public void heShouldSeeWelcomeM_grupoOnTheSigUpResultsPage(String result) {
+        assertThat(signedUserResults.getSignUpResults(result)).isEqualTo(result);
     }
 }

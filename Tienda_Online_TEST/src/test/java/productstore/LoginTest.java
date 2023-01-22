@@ -6,6 +6,6 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(glue = {"productstore"},
-        features = "src/test/resources/features/signup.feature")
-public class SignUpTest {
+        features = "src/test/resources/features/login.feature")
+public class LoginTest {
 }

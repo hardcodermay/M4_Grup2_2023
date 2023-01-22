@@ -5,7 +5,9 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
-@CucumberOptions(glue = {"productstore"},
-        features = "src/test/resources/features/signup.feature")
-public class SignUpTest {
+@CucumberOptions(
+        glue = {"productstore"},
+        plugin = {"pretty"},
+        features = "src/test/resources/features")
+public class VerifyAll {
 }

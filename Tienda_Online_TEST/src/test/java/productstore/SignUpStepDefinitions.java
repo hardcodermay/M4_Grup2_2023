@@ -8,7 +8,6 @@ import productstore.actions.navigate.Navigator;
 import productstore.actions.signup.SignUp;
 import productstore.actions.signup.SignUpActionResults;
 
-
 import static org.assertj.core.api.Assertions.assertThat;
 public class SignUpStepDefinitions {
 

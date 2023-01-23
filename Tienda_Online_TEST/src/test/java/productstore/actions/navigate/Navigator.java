@@ -10,10 +10,21 @@ import static productstore.ui.LandingPage.*;
 public class Navigator extends UIInteractionSteps {
 
     public WebElement[] resultados = new WebElement[3];
+    public WebElement[] productos = new WebElement[3];
     LandingPage landing;
     @Step("")
     public void toLandingPage() {
         landing.open();
+    }
+
+    @Step("")
+    public void toCartPage() {
+        find(Cart_Nav_Item).click();
+    }
+
+    @Step("")
+    public void toHomePage() {
+        find(Home_Nav_Item).click();
     }
 
     @Step("")
@@ -36,7 +47,26 @@ public class Navigator extends UIInteractionSteps {
         }
         resultados[index] = X;
     }
+    @Step("")
+    public void clickOneProduct(int index) {
+        WebElement X = null;
+        switch (index) {
+            case 0 -> {
+                X = find(FIRST_PRODUCT);
+                X.click();
+            }
+            case 1 -> {
+                X = find(SECOND_PRODUCT);
+                X.click();
+            }
 
+            case 2 -> {
+                X = find(THIRD_PRODUCT);
+                X.click();
+            }
+        }
+        productos[index] = X;
+    }
     public WebElement[] getvisitedCategories() {
         return resultados;
     }

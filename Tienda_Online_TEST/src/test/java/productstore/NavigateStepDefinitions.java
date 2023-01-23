@@ -3,7 +3,9 @@ package productstore;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import productstore.actions.navigate.NavigateActionResults;
 import productstore.actions.navigate.Navigator;
@@ -11,7 +13,8 @@ import productstore.actions.navigate.Navigator;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class NavigateStepDefinitions {
-
+    @Managed
+    WebDriver driver;
     private final String[] items = {"Phones", "Laptops", "Monitors"};
     private final int[] cats = {0, 1, 2};
     @Steps
@@ -22,6 +25,7 @@ public class NavigateStepDefinitions {
 
     @Given("Francisco wants to check every category")
     public void franciscoWantsToCheckEveryCategory() {
+        driver.manage().window().maximize();
         navigate.toLandingPage();
     }
 

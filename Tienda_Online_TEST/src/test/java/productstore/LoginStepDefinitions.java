@@ -1,4 +1,6 @@
 package productstore;
+import net.thucydides.core.annotations.Managed;
+import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -11,7 +13,8 @@ import productstore.actions.navigate.Navigator;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class LoginStepDefinitions {
-
+    @Managed
+    WebDriver driver;
     @Steps
     Navigator navigate;
 
@@ -22,6 +25,7 @@ public class LoginStepDefinitions {
     LoginActionResults loggedUserResults;
     @Given("Francisco wants to log in at the website using username and password")
     public void login_franciscoWantsToLogInAtTheWebsiteUsingUsernameAndPassword() {
+        driver.manage().window().maximize();
         navigate.toLandingPage();
     }
 
@@ -35,3 +39,5 @@ public class LoginStepDefinitions {
         assertThat(loggedUserResults.getLoginResults(result)).isEqualTo(result);
     }
 }
+
+

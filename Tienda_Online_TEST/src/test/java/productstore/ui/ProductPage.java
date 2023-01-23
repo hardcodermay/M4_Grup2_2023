@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 @DefaultUrl("https://www.demoblaze.com/index.html")
-public class LandingPage extends PageObject {
+public class ProductPage extends PageObject {
 
     @Managed
     static WebDriver driver;
@@ -16,23 +16,9 @@ public class LandingPage extends PageObject {
     public final static By PHONES_CATEGORY_LABEL = By.xpath("//*[@id='contcont']/div/div[1]/div/a[2]");
     public final static By LAPTOPS_CATEGORY_LABEL = By.xpath("//*[@id='contcont']/div/div[1]/div/a[3]");
     public final static By MONITORS_CATEGORY_LABEL = By.xpath("//*[@id='contcont']/div/div[1]/div/a[4]");
-    public final static By FIRST_PRODUCT = By.xpath("//*[@id='tbodyid']/div[4]/div/div/h4/a"); //
-    public final static By SECOND_PRODUCT = By.xpath("//*[@id='tbodyid']/div[1]/div/div/h4/a");
-    public final static By THIRD_PRODUCT = By.xpath("//*[@id='tbodyid']/div[2]/div/div/h4/a");
-    public final static By Cart_Nav_Item = By.xpath("//*[@id='cartur']");
-    public final static By Home_Nav_Item = By.xpath("//*[@id='navbarExample']ul/li[1]/a");
+    public final static By FIRST_PRODUCT_CARD_OF_CATEGORY = By.xpath("//*[@id='tbodyid']/div[1]/div");
+    public final static By FIRST_PRODUCT_NAME_OF_CATEGORY = By.xpath("//*[@id='tbodyid']/div[1]/div/div/h4/a");
 
-
-/*
-Samsung galaxy s7
-//*[@id="tbodyid"]/div[4]/div/div/h4/a
-
-Samsung galaxy s6
-//*[@id="tbodyid"]/div[1]/div/div/h4/a
-
-Sony vaio i7
-//*[@id="tbodyid"]/div[2]/div/div/h4/a
- */
 
     //SignUp Controls
     public static final By SIGNUP_BUTTON = By.id("signin2");

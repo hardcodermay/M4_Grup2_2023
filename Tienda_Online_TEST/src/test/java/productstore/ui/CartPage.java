@@ -1,23 +1,18 @@
 package productstore.ui;
 
 import net.thucydides.core.annotations.DefaultUrl;
-import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
-@DefaultUrl("https://www.demoblaze.com/index.html")
+@DefaultUrl("https://www.demoblaze.com/cart.html")
 public class CartPage extends PageObject {
 
+    public final static By PRODUCT_TO_ELIMINATE_LABEL = By.xpath("/html/body/div[6]/div/div[1]/div/table/tbody/tr[3]/td[4]/a");
 
-    //Landing Controls
-   // public final static By ADD_TO_CART_BUTTON = By.xpath("//*[@id='tbodyid']/div[2]/div/a");
+    public final static By TOTAL_LABEL = By.xpath("/html/body/div[6]/div/div[2]/div/div/h3");
 
-   // public final static By CART_PRODUCT_NAME = By.xpath("//*[@id='tbodyid']/h2");
+    public final static By PAYMENT_CART_BUTTON = By.xpath("//*[@id='page-wrapper']/div/div[2]/button");
 
-
-    // *[@id="tbodyid"]/h2 -- Product Name
-
-    // *[@id="tbodyid"]/div[2]/div/a -add to cart button
+    public final static By PAYMENT_FORM_TITLE_LABEL = By.xpath("//*[@id='orderModalLabel']");
 
 }

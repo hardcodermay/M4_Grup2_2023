@@ -26,6 +26,7 @@ public class SignUpStepDefinitions {
     public SignUpStepDefinitions() {
         getUserName();
     }
+
     @Steps
     Navigator navigate;
 
@@ -48,6 +49,7 @@ public class SignUpStepDefinitions {
 
     @Then("he should see {string} on the SigUp Results Page once Signed")
     public void sign_heShouldSeeWelcomeM_grupoOnTheSigUpResultsPage(String result) {
-        assertThat(signedUserResults.getSignUpResults(result)).isEqualTo(SIGN_UP_CONFIRMATION_TEXT);
+        String message = SignUp.getAlertText();
+        assertThat(signedUserResults.getSignUpResults(message)).isEqualTo(SIGN_UP_CONFIRMATION_TEXT);
     }
 }

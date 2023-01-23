@@ -11,11 +11,15 @@ import java.time.Duration;
 public class SignUpActionResults extends UIInteractionSteps {
     @Step("")
     public String getSignUpResults(String result) {
+        String ok = "";
         //Realizar espera de 5s - botón de confirmación de SigUp
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
-        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-        String ok = alert.getText();
-        alert.accept();
+        try {
+            WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
+            Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+            ok = alert.getText();
+            alert.accept();
+        }
+        catch(Exception e) {}
         return ok;
     }
 }

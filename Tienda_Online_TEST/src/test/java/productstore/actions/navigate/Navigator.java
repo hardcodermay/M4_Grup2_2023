@@ -70,8 +70,5 @@ public class Navigator extends UIInteractionSteps {
     public WebElement[] getvisitedCategories() {
         return resultados;
     }
-    public WebElement[] getAddedProducts() {
-        return productos;
-    }
 
 }

@@ -1,16 +1,11 @@
 package productstore.ui;
 
 import net.thucydides.core.annotations.DefaultUrl;
-import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 @DefaultUrl("https://www.demoblaze.com/index.html")
 public class LandingPage extends PageObject {
-
-    @Managed
-    static WebDriver driver;
 
     //Landing Controls
     public final static By PHONES_CATEGORY_LABEL = By.xpath("//*[@id='contcont']/div/div[1]/div/a[2]");
@@ -22,17 +17,6 @@ public class LandingPage extends PageObject {
     public final static By Cart_Nav_Item = By.xpath("//*[@id='cartur']");
     public final static By Home_Nav_Item = By.xpath("//*[@id='navbarExample']ul/li[1]/a");
 
-
-/*
-Samsung galaxy s7
-//*[@id="tbodyid"]/div[4]/div/div/h4/a
-
-Samsung galaxy s6
-//*[@id="tbodyid"]/div[1]/div/div/h4/a
-
-Sony vaio i7
-//*[@id="tbodyid"]/div[2]/div/div/h4/a
- */
 
     //SignUp Controls
     public static final By SIGNUP_BUTTON = By.id("signin2");
